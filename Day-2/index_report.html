@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Financial Plot</title>
+  <link rel="stylesheet" href="bootstrap.min.css">
+  <script src="https://unpkg.com/simple-statistics@5.0.0/dist/simple-statistics.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.min.js"></script>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <style>
+    body {
+      background-color: unset;
+    }
+
+    th {
+      text-align: left;
+      color: white;
+      padding-bottom: 1em;
+      padding-top: 1em;
+      padding-left: .5em;
+    }
+    td {
+      text-align: left;
+      padding: 8px;
+      color: black;
+    }
+
+    table{
+      width: 100%;
+    }
+
+    tbody>tr:nth-child(even) {
+      background-color: #f2f2f2 !important;
+    }
+
+    tbody>tr:nth-child(odd) {
+      background-color: #fff !important;
+    }
+
+    .subtitle{
+      background-color: black;
+      color: white;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <!-- YOUR CODE HERE -->
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="subtitle">
+        <h1>Amazon Financial Report <span class=""> @2019</span></h1>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-4">
+        <div class="subtitle"><h1>Company Profile</h1></div>
+        <div class="text-justify"><p id="cProfile">Foo Bar</p></div>
+      </div>
+      <div class="col-md-8">
+        <div class="subtitle"><h1>Stock Performance</h1></div>
+        <div id="plot"></div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <table id="Stock-Table" class="table-responsive">
+          <thead class="thead-dark">
+            <tr>
+              <th>Date</th>
+              <th>Open</th>
+              <th>High</th>
+              <th>Low</th>
+              <th>Close</th>
+              <th>Volume</th>
+            </tr>
+        </thead>
+          <tbody id="Stock-TBody" class="stocks table-striped">
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+
+  <script src="apiKey.js"></script>
+  <script src="plots_report.js"></script>
+</body>
+
+</html>
